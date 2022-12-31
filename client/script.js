@@ -24,7 +24,7 @@ function typeText(element, text) {
     if (index < text.length) {
       element.innerText += text.charAt(index);
       index++;
-      element.scrollTop = element.scrollHeight;
+      element.scrollIntoView();
     } else {
       clearInterval(interval);
     }
@@ -65,7 +65,7 @@ const handleSubmit = async (e) => {
   //bot's chat stripe
   const uniqueId = generateUniqueId();
   chatContainer.innerHTML += chatStripe(true, " ", uniqueId);
-  chatContainer.scrollTop = chatContainer.scrollHeight;
+  chatContainer.scrollIntoView();
 
   const messageDiv = document.getElementById(uniqueId);
 
@@ -94,6 +94,7 @@ const handleSubmit = async (e) => {
 
     messageDiv.innerHTML = "Something went wrong";
   }
+  messageDiv.scrollIntoView;
 };
 
 form.addEventListener("submit", handleSubmit);

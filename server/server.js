@@ -14,11 +14,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.get("/", async (req, res) => {
-  res.status(200).send({
-    message: "Hello World from Codex",
-  });
-});
 
 app.post("/", async (req, res) => {
   try {
@@ -27,7 +22,7 @@ app.post("/", async (req, res) => {
     const response = openai.createCompletion({
       model: "text-davinci-003",
       prompt: `${prompt}`,
-      temperature: 0,
+      temperature: 0.,
       max_tokens: 3000,
       top_p: 0.9,
       frequency_penalty: 0.7,
@@ -43,5 +38,5 @@ app.post("/", async (req, res) => {
 });
 
 app.listen(5000, () => {
-  console.log("server is listing on port http://localhost:5000");
+  console.log("server is running");
 });

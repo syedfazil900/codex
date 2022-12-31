@@ -24,7 +24,6 @@ function typeText(element, text) {
     if (index < text.length) {
       element.innerText += text.charAt(index);
       index++;
-      element.scrollIntoView();
     } else {
       clearInterval(interval);
     }
@@ -65,7 +64,7 @@ const handleSubmit = async (e) => {
   //bot's chat stripe
   const uniqueId = generateUniqueId();
   chatContainer.innerHTML += chatStripe(true, " ", uniqueId);
-  chatContainer.scrollIntoView();
+  chatContainer.scrollTop = chatContainer.scrollHeight;
 
   const messageDiv = document.getElementById(uniqueId);
 

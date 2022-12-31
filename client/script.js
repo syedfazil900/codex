@@ -94,7 +94,7 @@ const handleSubmit = async (e) => {
 
     messageDiv.innerHTML = "Something went wrong";
   }
-  messageDiv.scrollIntoView;
+  messageDiv.scrollTop = messageDiv.scrollHeight;
 };
 
 form.addEventListener("submit", handleSubmit);
